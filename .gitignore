@@ -1,0 +1,21 @@
+# RenderDoc build artifacts and binaries
+renderdoc-source/
+module/
+captures/
+*.rdc
+*.pyd
+*.dll
+*.exe
+
+# Python
+__pycache__/
+*.pyc
+*.egg-info/
+
+# Plan/session files (local to user)
+renderdoc-claude-cli-project-plan.md
+
+# Editor / OS
+.vscode/
+*.swp
+Thumbs.db
