@@ -2,6 +2,10 @@
 
 A [Claude Code](https://docs.anthropic.com/en/docs/claude-code) skill that gives Claude the ability to capture, inspect, and debug GPU frames using [RenderDoc](https://renderdoc.org). Works with Vulkan, D3D11, D3D12, and OpenGL.
 
+## Demo
+
+[![Watch the demo](https://img.youtube.com/vi/UkaXPtCWwo4/maxresdefault.jpg)](https://www.youtube.com/watch?v=UkaXPtCWwo4)
+
 ## What This Does
 
 This skill teaches Claude Code how to do GPU debugging. When you describe a rendering problem — broken shadows, wrong colors, missing objects, performance issues — Claude can:
