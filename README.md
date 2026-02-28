@@ -83,6 +83,45 @@ All checks should pass.
 
 Edit the `CLAUDE.md` in this repo to fill in your project-specific paths (application executable, working directory, capture output directory). This tells Claude about your specific setup.
 
+## MCP Server (Alternative Installation)
+
+Instead of (or in addition to) the skill, you can use the MCP server. This registers rdc-cli as native Claude Code tools that appear in `/mcp`.
+
+### 1. Install the MCP dependency
+
+```bash
+pip install -r requirements-mcp.txt
+```
+
+### 2. Register with Claude Code
+
+```bash
+claude mcp add rdc-tools -- python D:/renderdoc/mcp_server/server.py
+```
+
+### 3. Verify
+
+In Claude Code, run `/mcp` — you should see `rdc-tools` listed with 13 tools, 2 resources, and 6 prompts.
+
+### Available tools
+
+| Tool | Commands | Purpose |
+|------|----------|---------|
+| `rdc_session` | open, close, status | Session lifecycle |
+| `rdc_overview` | info, stats, passes, count, gpus | First-look after opening |
+| `rdc_draws` | draws, draw | Draw call navigation |
+| `rdc_events` | events, event | API event listing |
+| `rdc_pipeline` | pipeline, bindings | Pipeline state inspection |
+| `rdc_shader` | shader, shaders, search, shader-map | Shader inspection |
+| `rdc_export` | rt, texture, thumbnail, mesh, buffer | Visual export (inline image + path) |
+| `rdc_pixel` | pixel, pick-pixel, debug pixel/vertex/thread | Pixel debugging |
+| `rdc_diff` | diff | Frame comparison |
+| `rdc_resources` | resources, resource, usage, tex-stats | Resource inspection |
+| `rdc_shader_edit` | shader-build/replace/restore/encodings | Edit-replay |
+| `rdc_capture` | capture, attach, trigger, list, copy | Frame capture |
+| `rdc_vfs` | ls, tree, cat | Virtual filesystem |
+| `rdc_command` | any rdc command | Generic fallback |
+
 ## How It Works
 
 ### Skill trigger
